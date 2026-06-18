@@ -4,13 +4,13 @@
 
 const credentialsByRole = {
   student: {
-    email: "student@thesismart.com",
-    password: "ValidPassword123",
+    email: "demo@gmail.com",
+    password: "demo",
     redirectTo: "dashboard-estudiante.html",
   },
   advisor: {
-    email: "advisor@thesismart.com",
-    password: "ValidPassword123",
+    email: "demo@gmail.com",
+    password: "demo",
     redirectTo: "dashboard-asesor.html",
   },
 };

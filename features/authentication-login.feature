@@ -9,16 +9,16 @@ Feature: Autenticacion y login de usuarios en ThesiSmart
 
   Scenario: Inicio de sesion exitoso como estudiante
     Given que el usuario selecciona el rol "Estudiante"
-    And escribe el correo "student@thesismart.com"
-    And escribe la contrasena "ValidPassword123"
+    And escribe el correo "demo@gmail.com"
+    And escribe la contrasena "demo"
     When presiona el boton "Ingresar"
     Then el sistema valida las credenciales del estudiante
     And redirige al usuario a "dashboard-estudiante.html"
 
   Scenario: Inicio de sesion exitoso como asesor
     Given que el usuario selecciona el rol "Asesor"
-    And escribe el correo "advisor@thesismart.com"
-    And escribe la contrasena "ValidPassword123"
+    And escribe el correo "demo@gmail.com"
+    And escribe la contrasena "demo"
     When presiona el boton "Ingresar"
     Then el sistema valida las credenciales del asesor
     And redirige al usuario a "dashboard-asesor.html"
@@ -33,14 +33,14 @@ Feature: Autenticacion y login de usuarios en ThesiSmart
 
   Scenario: Formato de correo invalido
     Given que el usuario escribe el correo "usuario-sin-formato"
-    And escribe la contrasena "ValidPassword123"
+    And escribe la contrasena "demo"
     When presiona el boton "Ingresar"
     Then el sistema muestra una validacion de formato junto al campo de correo
     And no redirige al usuario a ningun dashboard
 
   Scenario: Credenciales incorrectas
     Given que el usuario selecciona el rol "Estudiante"
-    And escribe el correo "student@thesismart.com"
+    And escribe el correo "demo@gmail.com"
     And escribe la contrasena "PasswordIncorrecto"
     When presiona el boton "Ingresar"
     Then el sistema muestra un mensaje claro de credenciales incorrectas
@@ -51,7 +51,7 @@ Feature: Autenticacion y login de usuarios en ThesiSmart
     Given que el usuario no recuerda su contrasena
     When selecciona el enlace "Olvide mi contrasena"
     Then el sistema muestra un formulario de recuperacion de acceso
-    When escribe el correo "student@thesismart.com"
+    When escribe el correo "demo@gmail.com"
     And envia la solicitud de recuperacion
     Then el sistema muestra una confirmacion simulada de recuperacion
 
