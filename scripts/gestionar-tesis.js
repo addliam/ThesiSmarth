@@ -1,0 +1,4 @@
+// ─── Gestionar Tesis ────────────────────────────────────────────────────────────────
+// Responsable: Liam Yostin Quiñones Carhuaz
+// Propiedad exclusiva. No editar fuera de esta rama.
+
