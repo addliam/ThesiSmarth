@@ -12,19 +12,191 @@
 </head>
 <body>
 
-  <marquee>Esta página es responsabilidad de: Ruth Nayeli Antón Tasayco</marquee>
-
   <header>
-    <!-- Header compartido -->
+    <nav class="nav">
+      <a href="index.html" class="cuadro">
+        <img class="logo" height="48" width="52" src="images/landing/image 8.png" alt="ThesisSmart Logo">
+        <span class="titulo">ThesisSmart</span>
+      </a>
+
+      <div class="nav-rigth">
+        <ul class="menu">
+          <li><a href="#seccion-caracteristicas">Características</a></li>
+          <li><a href="#seccion-como-funciona">Cómo funciona</a></li>
+          <li><a href="#seccion-planes">Planes</a></li>
+        </ul>
+
+        <div class="text2">
+          <a href="auth.html" class="login">Iniciar sesión</a>
+          <a href="auth.html" class="comenzar">Comenzar gratis</a>
+        </div>
+      </div>
+    </nav>
   </header>
 
   <main>
-    <!-- Contenido de Landing Page -->
+    
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1>Desarrolla tu tesis <span>sin estrés y con confianza</span></h1>
+        <p class="hero-description">
+          ThesisSmart te guía paso a paso en la elaboración de tu tesis cuantitativa, 
+          validando la coherencia metodológica automáticamente y reduciendo errores desde el inicio.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="auth.html" class="btn-primary">Empezar ahora gratis</a>
+          <a href="#" class="btn-secondary" id="btn-hero-demo">Ver demo</a>
+        </div>
+
+        <div class="hero-features">
+          <p><span class="check-icon">✓</span> Sin tarjeta de crédito</p>
+          <p><span class="check-icon">✓</span> Configuración en 2 minutos</p>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="images/landing/Diseño sin título 1.png" alt="Estudiante graduada de ThesisSmart">
+      </div>
+    </section>
+
+    <section class="stats-section">
+      <div class="stat-card">
+        <p class="stat-number">85%</p>
+        <p class="stat-text">Reducción de errores metodológicos</p>
+      </div>
+
+      <div class="stat-card">
+        <p class="stat-number">3 meses</p>
+        <p class="stat-text">Menos tiempo promedio de desarrollo</p>
+      </div>
+
+      <div class="stat-card">
+        <p class="stat-number">100+</p>
+        <p class="stat-text">Estudiantes confían en nosotros</p>
+      </div>
+    </section>
+
+    <section id="seccion-caracteristicas" class="features-section">
+      <div class="features-header">
+        <h2>Todo lo que necesitas en un solo lugar</h2>
+        <p>Herramientas diseñadas para facilitar cada etapa de tu tesis</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <img src="images/landing/mingcute_head-ai-fill.png" alt="Icono IA" class="feature-icon">
+          <h3>Validación con IA</h3>
+          <p>Detecta inconsistencias entre problema, objetivos e hipótesis automáticamente mientras escribes.</p>
+        </div>
+
+        <div class="feature-card">
+          <img src="images/landing/Group.png" alt="Icono Flujo" class="feature-icon">
+          <h3>Flujo Guiado</h3>
+          <p>Wizard paso a paso que te acompaña desde la idea inicial hasta las conclusiones finales.</p>
+        </div>
+
+        <div class="feature-card">
+          <img src="images/landing/mingcute_head-ai-fill (2).png" alt="Icono Análisis" class="feature-icon">
+          <h3>Análisis Estadístico</h3>
+          <p>Sugiere pruebas estadísticas apropiadas según tu diseño metodológico y tipo de variables.</p>
+        </div>
+
+        <div class="feature-card">
+          <img src="images/landing/Vector.png" alt="Icono Progreso" class="feature-icon">
+          <h3>Seguimiento de Progreso</h3>
+          <p>Visualiza tu avance en tiempo real y recibe recordatorios para mantener tu ritmo de trabajo.</p>
+        </div>
+
+        <div class="feature-card">
+          <img src="images/landing/linea-png.png" alt="Icono Asesor" class="feature-icon">
+          <h3>Colaboración con Asesor</h3>
+          <p>Tu asesor puede revisar avances, dejar comentarios y aprobar secciones directamente en la plataforma.</p>
+        </div>
+
+        <div class="feature-card">
+          <img src="images/landing/librito.png" alt="Icono Plantillas" class="feature-icon">
+          <h3>Plantillas Académicas</h3>
+          <p>Formatos pre-configurados según normas APA, Vancouver o el estilo de tu universidad.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="seccion-como-funciona" class="how-section">
+      <div class="features-header">
+        <h2>¿Cómo funciona ThesisSmart?</h2>
+        <p>Completa tu investigación académica en 3 simples pasos</p>
+      </div>
+      <div class="how-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Configura tu Proyecto</h3>
+          <p>Ingresa tu tema, enfoque de investigación y la normativa solicitada por tu universidad.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>Escribe con Validación</h3>
+          <p>Nuestra inteligencia artificial analiza la coherencia metodológica de tus avances en tiempo real.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Exporta y Colabora</h3>
+          <p>Comparte el borrador listo con tu asesor universitario y descarga el documento final formateado.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="seccion-planes" class="pricing-section">
+      <div class="features-header">
+        <h2>Planes a tu medida</h2>
+        <p>Elige el impulso que tu carrera profesional necesita</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <h3>Plan Básico</h3>
+          <p class="price-amount">Gratis</p>
+          <p class="price-description">Ideal para estructurar la idea inicial de tu tesis.</p>
+          <a href="auth.html" class="btn-secondary">Empezar gratis</a>
+        </div>
+        <div class="price-card premium">
+          <div class="premium-badge">Popular</div>
+          <h3>Plan Premium</h3>
+          <p class="price-amount">S/ 49<span>/mes</span></p>
+          <p class="price-description">Acceso ilimitado a validaciones con IA y exportación APA.</p>
+          <a href="auth.html" class="btn-primary">Adquirir Premium</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="cta-box">
+        <h2>Comienza tu tesis hoy con confianza</h2>
+        <p>Únete a miles de estudiantes que ya están desarrollando su tesis de manera eficiente</p>
+        <div class="cta-buttons">
+          <a href="auth.html" class="btn-cta">Crear cuenta gratuita</a>
+          <a href="#" class="btn-cta-secondary" id="btn-footer-demo">Ver demo interactivo</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
+  <div class="demo-floating-menu" id="panel-menu-demo">
+    <div class="demo-menu-header">
+      <h4>NAVEGACIÓN RÁPIDA (Demo)</h4>
+      <button id="btn-cerrar-demo" class="close-demo">&times</button>
+    </div>
+    <div class="demo-menu-links">
+      <a href="index.html" class="demo-link active">Landing Page</a>
+      <a href="auth.html" class="demo-link">Autenticación</a>
+      <a href="dashboard-estudiante.html" class="demo-link">Dashboard Estudiante</a>
+      <a href="gestionar-tesis.html" class="demo-link">Editor / Wizard</a>
+      <a href="dashboard-asesor.html" class="demo-link">Dashboard Asesor</a>
+    </div>
+  </div>
+
   <footer>
-    <!-- Footer compartido -->
-  </footer>
+    </footer>
 
   <script src="scripts/global.js"></script>
   <script src="scripts/landing.js"></script>
