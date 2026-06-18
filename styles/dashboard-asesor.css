@@ -113,7 +113,8 @@ body {
 /* Bloque de Indicadores KPI */
 .seccion-estadisticas {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  /* La táctica de fluidos intrínsecos */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 24px;
   margin-top: 32px;
 }
@@ -157,11 +158,21 @@ body {
 
 /* Estructura Intermedia: Distribución Principal */
 .cuadricula-principal {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
+  display: flex;
+  flex-wrap: wrap; /* Permite el salto automático de línea */
   gap: 32px;
   margin-top: 32px;
-  align-items: start;
+  align-items: flex-start;
+}
+
+/* El pelotón principal */
+.columna-estudiantes {
+  flex: 2 1 500px; 
+}
+
+/* El escuadrón de apoyo */
+.columna-lateral {
+  flex: 1 1 300px;
 }
 
 .cabecera-seccion {
