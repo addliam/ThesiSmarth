@@ -45,19 +45,6 @@
 
 ---
 
-## 🌿 Ramas Git
-
-```
-main
- ├── feature/landing                → Ruth
- ├── feature/dashboard-estudiante   → Rosa
- ├── feature/gestionar-tesis        → Liam
- ├── feature/dashboard-asesor       → Luis
- └── feature/auth                   → Miguel
-```
-
----
-
 ## 🎨 Colores del proyecto (`global.css`)
 
 | Variable           | Hex       |

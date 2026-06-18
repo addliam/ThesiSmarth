@@ -17,15 +17,6 @@
 
   /* Tipografía */
   --fuente: 'Poppins', sans-serif;
-
-  /* Espaciados */
-  --espacio-s: 8px;
-  --espacio-m: 16px;
-  --espacio-l: 32px;
-
-  /* Bordes */
-  --radio-card: 12px;
-  --radio-btn:  8px;
 }
 
 /* ─── RESET ─────────────────────────────────────────────────────────── */
