@@ -184,7 +184,7 @@ body {
    margin-bottom: 1.5rem;
 }
 
-.teasis-header h2{
+.tesis-header h2{
    font-size: 1.25rem;
    font-weight: 700;
    margin: 0;
@@ -198,7 +198,17 @@ body {
    font-family: var(--fuente);
    font-weight: 600;
    font-size: 0.85rem;
+   border: none;
    cursor: pointer;
+   transition: background-color 0.2s, transform 0.1s;
+}
+
+#btn-nueva-tesis:hover{
+   opacity: 0.9;
+}
+
+#btn-nueva-tesis:active{
+   transform: scale(0.98);
 }
 
 .tesis-card{
@@ -270,7 +280,7 @@ body {
    color: var(--violeta);
 }
 
-.meta-estado.en-revisión{
+.meta-estado.en-revision{
    background-color: var(--amarillo-claro);
    color: var(--naranja);
 }
@@ -300,6 +310,7 @@ body {
    height: 100%;
    width: var(--ancho-progreso);
    border-radius: 0.5rem;
+   transition: width 0.6s cubic-bezier(0.4, 0, 0.2,1);
 }
 
 .tesis-card-footer{
@@ -319,7 +330,7 @@ body {
    cursor: pointer;
 }
 
-.btn-continuar-tesis{
+.btn-continuar-tesis, .btn-wizard-avance{
    background-color: var(--violeta);
    border: none;
    color: white;
@@ -390,6 +401,7 @@ body {
   display: block;
   font-size: 0.8rem;
   color: var(--gris);
+  margin-top: 0.15rem;
 }
 
 .actividad-tiempo {
@@ -401,7 +413,7 @@ body {
 
 .recursos-card {
   background-color: var(--morado);
-  color: #ffffff;
+  color: white;
   padding: 1.5rem;
   border-radius: 0.75rem;
 }
@@ -420,7 +432,7 @@ body {
 
 .btn-recursos-morado {
   width: 100%;
-  background-color: #ffffff;
+  background-color: white;
   color: var(--morado);
   border: none;
   padding: 0.65rem;
@@ -483,12 +495,13 @@ body {
   border-radius: 0.5rem;
   min-width: 2.75rem;
   height: 2.75rem;
+  box-sizing: border-box;
 }
 
 .hito-numero {
   font-size: 0.95rem;
   font-weight: 700;
-  color: var(--griss);
+  color: var(--gris);
   line-height: 1;
 }
 
@@ -507,6 +520,7 @@ body {
 .hito-titulo {
   font-size: 0.85rem;
   font-weight: 600;
+  color: var(--negro);
 }
 
 .hito-subtexto {
@@ -514,6 +528,346 @@ body {
   color: var(--gris);
 }
 
+.panel-vacio-oculto{
+   display: none;
+}
+
+.panel-bienvenida-vacio{
+   background-color: white;
+   border: 2px dashed #cbd5e1;
+   padding: 3rem 2rem;
+   border-radius: 0.75rem;
+   text-align: center;
+   margin-bottom: 2rem;
+}
+
+.btn-vacio-accion{
+   margin-top: 1rem;
+}
+
+.modal-overlay-wizard{
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: var(--gris);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   z-index: 1000;
+   opacity: 0;
+   pointer-events: none;
+   transition: opacity 0.25s ease;
+}
+
+.modal-overlay-wizard.activo{
+   opacity: 1;
+   pointer-events: auto;
+}
+
+.modal-wizard-card{
+   background-color: white;
+   padding: 2rem;
+   border-radius: 1rem;
+   width: 100%;
+   max-width: 480px;
+   box-shadow: 0 12px 32px var(--gris);
+}
+
+.wizard-header{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 1.25rem;
+}
+
+.wizard-header h2{
+   font-size: 1.2rem;
+   font-weight: 700;
+   margin: 0;
+}
+
+.btn-cerrar-x{
+   background-color: none;
+   border: none;
+   font-size: 1.5rem;
+   cursor: pointer;
+   color: var(--gris);
+}
+
+
+.wizard-pasos-indicador{
+   display: flex;
+   justify-content: space-between;
+   gap: 0.75rem;
+   margin-bottom: 1.5rem;
+}
+
+.paso-dot{
+   width: 1.75rem;
+   height: 1.75rem;
+   border-radius: 50%;
+   background-color: #f1f5f9;
+   color: var(--gris);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 0.8rem;
+   font-weight: 600;
+}
+
+.paso-dot.activo{
+   background-color: var(--violeta);
+   color: white;
+}
+
+.form-label{
+   display: block;
+   font-size: 0.85rem;
+   font-weight: 600;
+   margin-bottom: 0.5rem;
+}
+
+.form-input, .form-select, .form-text-area{
+   width: 100%;
+   padding: 0.65rem;
+   border: 1px solid #e2e8f0;
+   border-radius: 0.5rem;
+   font-family: var(--fuente);
+   font-size: 0.9rem;
+   box-sizing: border-box;
+}
+
+.form-text-area {
+  min-height: 5.5rem;
+  resize: none;
+  margin-top: 0.5rem;
+}
+
+.wizard-acciones{
+   display: flex;
+   justify-content: flex-end;
+   gap: 0.75rem;
+   margin-top: 1.75rem;
+}
+
+.btn-secundario{
+   background-color: transparent;
+   border: 1px solid #e2e8f0;
+   padding: 0.55rem 1.25rem;
+   border-radius: 0.5rem;
+   font-family: var(--fuente);
+   font-size: 0.85rem;
+   cursor: pointer;
+}
+
+.ocultar-bloque{
+   display: none !important;
+}
+
+.ocultar-btn{
+   display: none !important;
+}
+
 .lista-hitos .hito-item:first-child .hito-numero {
   color: var(--violeta); 
+}
+
+.alertas-desplegables-caja {
+  background-color: var(--amarillo-claro);
+  border: 1px solid var(--naranja);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin: 0.75rem 0;
+  animation: slideAbajoAnimate 0.25s ease-out;
+}
+
+.alertas-desplegables-caja p {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: var(--naranja);
+}
+
+.alertas-desplegables-caja ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.alertas-desplegables-caja li {
+  font-size: 0.8rem;
+  color: var(--negro);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  line-height: 1.3;
+}
+
+.alertas-desplegables-caja li img{
+   width: 0.9rem;
+   height: 0.9rem;
+   flex-shrink: 0;
+}
+
+.btn-alerta-interactiva {
+   background-color: var(--amarillo-claro);
+   border: 1px solid var(--naranja);
+   cursor: pointer;
+   transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-alerta-interactiva:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 5px var(--gris);
+}
+
+.hito-item {
+  position: relative;
+  width: 100%;
+}
+
+.btn-eliminar-hito {
+  background: none;
+  border: none;
+  color: var(--gris);
+  font-size: 1.25rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-left: auto; 
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.25rem;
+  transition: color 0.2s, background-color 0.2s;
+  line-height: 1;
+}
+
+.btn-eliminar-hito:hover {
+  color: var(--rojo); 
+  background-color: #f1f5f9;
+}
+
+.recursos-descargas-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 1.25rem;
+  animation: slideAbajoAnimate 0.25s ease-out; 
+}
+.btn-descarga-recurso {
+  width: 100%;
+  padding: 0.65rem;
+  border-radius: 0.5rem;
+  font-family: var(--fuente);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-align: center;
+  text-decoration: none; 
+  display: block;
+  box-sizing: border-box;
+  transition: opacity 0.2s, transform 0.1s;
+  
+  background-color: var(--gris);
+  color: white;
+  border: 1px solid white;
+}
+
+.btn-recurso-blanco {
+  background-color: white;
+  color: var(--morado);
+  border: none;
+}
+
+.btn-descarga-recurso:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
+@keyframes slideAbajoAnimate {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+   .dashboard-header {
+    padding: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .dashboard-main {
+    padding: 0 1rem;
+    margin: 1.5rem auto;
+  }
+
+  .bienvenida-section h1 {
+    font-size: 1.5rem;
+  }
+
+  .resumen-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .resumen-card {
+    min-height: 7.5rem;
+    padding: 1.25rem;
+  }
+
+  .resumen-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .contenido-grid {
+    grid-template-columns: 1fr; 
+    gap: 1.5rem;
+  }
+
+  .tesis-header h2 {
+    font-size: 1.15rem;
+  }
+
+  .tesis-card {
+    padding: 1.25rem;
+  }
+
+  .tesis-card h3 {
+    font-size: 1rem;
+  }
+
+  .tesis-card-footer {
+    flex-direction: column; 
+    gap: 0.5rem;
+  }
+
+  .btn-ver-progreso,
+  .btn-continuar-tesis {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .modal-wizard-card {
+    width: 92%;
+    padding: 1.5rem;
+    box-sizing: border-box;
+  }
+
+  .wizard-header h2 {
+    font-size: 1.05rem;
+  }
+
+  .wizard-acciones {
+    flex-direction: column-reverse; /* El botón de avance principal se posiciona arriba para accesibilidad del pulgar */
+    gap: 0.5rem;
+  }
+
+  .wizard-acciones button {
+    width: 100%;
+    padding: 0.65rem;
+  }
 }
