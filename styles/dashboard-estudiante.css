@@ -184,7 +184,7 @@ body {
    margin-bottom: 1.5rem;
 }
 
-.teasis-header h2{
+.tesis-header h2{
    font-size: 1.25rem;
    font-weight: 700;
    margin: 0;
@@ -280,7 +280,7 @@ body {
    color: var(--violeta);
 }
 
-.meta-estado.en-revisión{
+.meta-estado.en-revision{
    background-color: var(--amarillo-claro);
    color: var(--naranja);
 }
@@ -330,7 +330,7 @@ body {
    cursor: pointer;
 }
 
-.btn-continuar-tesis{
+.btn-continuar-tesis, .btn-wizard-avance{
    background-color: var(--violeta);
    border: none;
    color: white;
