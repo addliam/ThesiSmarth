@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const claseEstado = tesis.estado.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(" ", "-");
       const alertaHTML = tesis.alertas > 0 
         ? `<button class="tesis-alerta-badge btn-alerta-interactiva" data-id="${tesis.id}" type="button"> 
-            <img src="images/dashboard-estudiante/icon-exclamation-triangle.svg" alt="Alerta" class="tesis-alerta-icon">
+            <img src="assets/images//dashboard-estudiante/icon-exclamation-triangle.svg" alt="Alerta" class="tesis-alerta-icon">
             ${tesis.alertas}
           </button>` 
         : "<div></div>";
@@ -120,14 +120,14 @@ document.addEventListener("DOMContentLoaded", () => {
           <div id="detalles-alertas-${tesis.id}" class="alertas-desplegables-caja ocultar-bloque">
             <p><strong>Observaciones críticas del asesor:</strong></p>
             <ul>
-              <li> <img src="images/dashboard-estudiante/icon-exclamation-triangle.svg"> Incoherencia detectada entre el título y el objetivo general.</li>
-              <li> <img src="images/dashboard-estudiante/icon-exclamation-triangle.svg"> Redacción ambigua en el planteamiento del problema técnico.</li>
+              <li> <img src="assets/images//dashboard-estudiante/icon-exclamation-triangle.svg"> Incoherencia detectada entre el título y el objetivo general.</li>
+              <li> <img src="assets/images//dashboard-estudiante/icon-exclamation-triangle.svg"> Redacción ambigua en el planteamiento del problema técnico.</li>
             </ul>
           </div>
 
           <div class="tesis-meta">
             <span class="meta-tiempo">
-              <img src="images/dashboard-estudiante/icon-clock.svg" alt="Reloj" class="tesis-meta-icon">
+              <img src="assets/images//dashboard-estudiante/icon-clock.svg" alt="Reloj" class="tesis-meta-icon">
               ${tesis.tiempo}
             </span>
             <span class="meta-estado ${claseEstado}">${tesis.estado}</span>
@@ -332,11 +332,11 @@ const btnRecursos = document.getElementById("btn-recursos");
           <p>Selecciona el recurso metodológico que deseas descargar en tu equipo:</p>
           
           <div class="recursos-descargas-lista">
-            <a href="images/dashboard-estudiante/plantilla-estructura-tesis.png" download class="btn-descarga-recurso">
+            <a href="assets/images//dashboard-estudiante/plantilla-estructura-tesis.png" download class="btn-descarga-recurso">
               Estructura de Tesis (Docx)
             </a>
             
-            <a href="images/dashboard-estudiante/manual-normas-apa7.png" target="_blank" class="btn-descarga-recurso btn-recurso-blanco">
+            <a href="assets/images//dashboard-estudiante/manual-normas-apa7.png" target="_blank" class="btn-descarga-recurso btn-recurso-blanco">
               Guía de Citación APA 7 (PDF)
             </a>
           </div>
