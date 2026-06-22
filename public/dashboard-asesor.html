@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Asesor — Proyecto Tesis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/dashboard-asesor.css">
+</head>
+<body>
+
+
+ <div class="contenedor-dashboard">
+    
+    <header class="cabecera-asesor">
+      <div class="perfil-usuario">
+        <div class="avatar-iniciales avatar-violeta">DR</div>
+        <div class="info-usuario">
+          <h2 class="nombre-usuario">Dr. Roberto Díaz</h2>
+          <p class="rol-usuario">Asesor Académico - Ingeniería</p>
+        </div>
+      </div>
+      <div class="acciones-cabecera">
+        <button id="btn-mensajes" class="btn-icono" aria-label="Mensajes">
+          <img src="https://api.iconify.design/lucide:message-square.svg?color=%23667085" alt="Chat">
+        </button>
+        <button id="btn-configuracion" class="btn-texto">Configuración</button>
+      </div>
+    </header>
+
+    <div class="seccion-titulo">
+      <h1 class="titulo-principal">Panel de Asesoramiento</h1>
+      <p class="subtitulo">Gestiona y revisa el progreso de tus estudiantes</p>
+    </div>
+
+    <div class="seccion-estadisticas">
+      
+      <div class="tarjeta-estadistica">
+        <div class="icono-estadistica de-violeta">
+          <img src="https://api.iconify.design/lucide:users.svg?color=%239810FA" alt="Usuarios">
+        </div>
+        <div class="datos-estadistica">
+          <h3 id="kpi-activos" class="numero-estadistica">0</h3>
+          <p class="etiqueta-estadistica">Estudiantes activos</p>
+        </div>
+      </div>
+
+      <div class="tarjeta-estadistica">
+        <div class="icono-estadistica de-naranja">
+          <img src="https://api.iconify.design/lucide:clock.svg?color=%23E17100" alt="Pendientes">
+        </div>
+        <div class="datos-estadistica">
+          <h3 id="kpi-pendientes" class="numero-estadistica">0</h3>
+          <p class="etiqueta-estadistica">Revisiones pendientes</p>
+        </div>
+      </div>
+
+      <div class="tarjeta-estadistica">
+        <div class="icono-estadistica de-verde">
+          <img src="https://api.iconify.design/lucide:check-circle-2.svg?color=%2300A63E" alt="Aprobadas">
+        </div>
+        <div class="datos-estadistica">
+          <h3 id="kpi-aprobadas" class="numero-estadistica">0</h3>
+          <p class="etiqueta-estadistica">Aprobadas este mes</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="cuadricula-principal">
+      
+      <div class="columna-estudiantes">
+        <div class="cabecera-seccion">
+          <h2 class="titulo-seccion">Mis Estudiantes</h2>
+          <div class="controles-busqueda">
+            <input type="text" id="input-buscar-estudiante" placeholder="Buscar estudiante..." class="campo-busqueda">
+            <button id="btn-filtrar" class="btn-secundario">Filtrar</button>
+          </div>
+        </div>
+
+        <div id="contenedor-estudiantes" class="lista-estudiantes">
+          </div>
+      </div>
+
+      <div class="columna-lateral">
+        
+        <div class="tarjeta-resumen">
+          <div class="cabecera-resumen">
+            <img src="https://api.iconify.design/lucide:clock.svg?color=%23E17100" alt="Reloj" class="icono-seccion">
+            <h2 class="titulo-seccion">Revisiones Pendientes</h2>
+          </div>
+          <div id="contenedor-revisiones" class="lista-revisiones">
+            </div>
+        </div>
+
+        <div class="tarjeta-resumen" style="margin-top: 24px;">
+          <div class="cabecera-resumen">
+            <img src="https://api.iconify.design/lucide:calendar.svg?color=%23667085" alt="Calendario" class="icono-seccion">
+            <h2 class="titulo-seccion">Próximas Reuniones</h2>
+          </div>
+          <div id="contenedor-reuniones" class="lista-reuniones">
+             </div>
+        </div>
+
+      </div>
+      
+
+    </div>
+  </div>
+  <footer>
+    <!-- Footer compartido -->
+  </footer>
+
+  <script src="scripts/global.js"></script>
+  <script src="scripts/dashboard-asesor.js"></script>
+</body>
+</html>
