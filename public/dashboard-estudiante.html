@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Estudiante — Proyecto Tesis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles/global.css">
+  <link rel="stylesheet" href="assets/styles/dashboard-estudiante.css">
+</head>
+<body>
+
+  <header class="dashboard-header">
+    <div class="usuario-info">
+      <div class="usuario-avatar" id="avatar-usuario"></div>
+      <div class="usuario-datos">
+        <h3 id="nombre-usuario"></h3>
+        <p id="carrera-usuario"></p>
+      </div>
+    </div>
+    <div class="header-acciones">
+      <button class="btn-chat-header" id="btn-chat">
+        <img src="assets/images/dashboard-estudiante/icon-chat-bubble.svg" alt="Chat" class="btn-chat-icon">
+      </button>
+      <button class="btn-ayuda-header" id="btn-ayuda">Ayuda</button>
+    </div>
+  </header>
+
+  <main class="dashboard-main">
+    <!-- Contenido de Dashboard Estudiante -->
+    <section class="bienvenida-section">
+      <h1 id="mensaje-bienvenida"></h1>
+      <p>
+        Continúa desarrollando tu tesis con confianza
+      </p>
+    </section>
+
+    <div id="panel-bienvenida-vacio" class="panel-vacio-oculto">
+      <div class="vacio-contenido">
+        <h2>¡Crea tu primer proyecto de Tesis y avanza sin dudas!</h2>
+        <p>Aún no tienes ningún proyecto de tesis registrado en el sistema universitario</p>
+        <button class="btn-crear-nueva btn-vacio-accion" id="btn-crear-primera">+ Registrar mi primera tesis</button>
+      </div>
+    </div>
+
+    <div id="bloque-dashboard-contenido">
+      <section class="resumen-grid">
+        <article class="resumen-card">
+          <img src="assets/images/dashboard-estudiante/icon-tesis.svg" alt="" class="indicador-svg">
+          <h2 id="tesis-activas"></h2>
+          <span>Tesis activas</span>
+        </article>
+
+        <article class="resumen-card">
+          <img src="assets/images/dashboard-estudiante/icon-check-circle.svg" alt="" class="indicador-svg">
+          <h2 id="progreso-promedio"></h2>
+          <span>Progreso promedio</span>
+        </article>
+
+        <article class="resumen-card">
+          <img src="assets/images/dashboard-estudiante/icon-exclamation-triangle.svg" alt="" class="indicador-svg">
+          <h2 id="alertas-pendientes"></h2>
+          <span>Alertas pendientes</span>
+        </article>
+
+        <article class="resumen-card">
+          <img src="assets/images/dashboard-estudiante/icon-arrow-trending-up.svg" alt="" class="indicador-svg">
+          <h2 id="dias-racha"></h2>
+          <span>Días de racha</span>
+        </article>
+      </section>
+
+      <section class="contenido-grid">
+        <section class="tesis-column">
+          <div class="tesis-header">
+            <h2>Mis Tesis</h2>
+            <button class="btn-crear-nueva" id="btn-nueva-tesis">+ Nueva tesis</button>
+          </div>
+          <div id="contenedor-tesis"></div>
+        </section>
+        <aside class="sidebar-column">
+          <section class="sidebar-card">
+            <h3>Actividad reciente</h3>
+            <ul class="lista-actividad" id="lista-actividad"></ul>
+          </section>
+
+          <section class="recursos-card">
+            <h3>Recursos disponibles</h3>
+            <p>Accede a plantillas y guías metodológicas</p>
+            <button class="btn-recursos-morado" id="btn-recursos">
+              <img src="assets/images/dashboard-estudiante/icon-descargar.svg" alt="" class="btn-recursos-icon">
+              Ver recursos
+            </button>
+          </section>
+
+          <section class="sidebar-card">
+            <div class="titulo-hitos-contenedor">
+              <img src="assets/images/dashboard-estudiante/icon-calendar.svg" alt="" class="titulo-hitos-svg">
+              <h3>Próximos hitos</h3>
+            </div> 
+            <ul class="lista-hitos" id="lista-hitos"></ul>
+          </section>
+        </aside>
+      </section>
+    </div>
+  </main>
+
+  <div id="modal-setup-tesis" class="modal-overlay-wizard">
+    <div class="modal-wizard-card">
+      <div class="wizard-header">
+        <h2>Asistente de Configuración Inicial</h2>
+        <button id="btn-cerrar-wizard" class="btn-cerrar-x">&times;</button>
+      </div>
+      <div class="wizard-pasos-indicador">
+        <span class="paso-dot activo" data-paso="1">1</span>
+        <span class="paso-dot" data-paso="2">2</span>
+        <span class="paso-dot" data-paso="3">3</span>
+        <span class="paso-dot" data-paso="4">4</span>
+        <span class="paso-dot" data-paso="5">5</span>
+        <span class="paso-dot" data-paso="6">6</span>
+      </div>
+      <form id="form-setup-tesis">
+        <div class="wizard-paso-bloque" data-bloque="1">
+          <label class="form-label">Título de tu investigación:</label>
+          <input type="text" id="input-titulo-tesis" class="form-input" placeholder="Ej. Implementación de un Sistema basado en arquitecturas..." required>
+        </div>
+
+        <div class="wizard-paso-bloque ocultar-bloque" data-bloque="2">
+          <label class="form-label">Objetivos del Proyecto:</label>
+          <input type="text" id="input-objetivo-general" class="form-input" placeholder="Objetivo general..." required>
+          <textarea id="input-objetivos-especificos" class="form-text-area" placeholder="Objetivos específicos (uno por línea)..." required></textarea>
+        </div>
+
+        <div class="wizard-paso-bloque ocultar-bloque" data-bloque="3">
+          <label class="form-label">Planteamiento de Hipótesis:</label>
+          <textarea id="input-hipotesis" class="form-text-area" placeholder="Escribe la hipótesis general de tu investigación académica..." required></textarea>
+        </div>
+
+        <div class="wizard-paso-bloque ocultar-bloque" data-bloque="4">
+          <label class="form-label">Bases Teóricas y Antecedentes:</label>
+          <textarea id="input-marco-teorico" class="form-text-area" placeholder="Registra los antecedentes principales o palabras clave del Marco Teórico..." required></textarea>
+        </div>
+
+        <div class="wizard-paso-bloque ocultar-bloque" data-bloque="5">
+          <label class="form-label">Enfoque y Diseño Metodológico:</label>
+          <select id="select-metodologia" class="form-select">
+            <option value="Cualitativo">Enfoque Cualitativo</option>
+            <option value="Cuantitativo">Enfoque Cuantitativo</option>
+            <option value="Mixto">Enfoque Mixto</option>
+          </select>
+        </div>
+
+        <div class="wizard-paso-bloque ocultar-bloque" data-bloque="6">
+          <label class="form-label">Plan de Análisis de Datos:</label>
+          <textarea id="input-analisis" class="form-text-area" placeholder="Describe los instrumentos o softwares a usar para el procesamiento de datos..." required></textarea>
+        </div>
+
+        <div class="wizard-acciones">
+          <button type="button" id="btn-wizard-anterior" class="btn-secundario ocultar-btn">Atrás</button>
+          <button type="button" id="btn-wizard-siguiente" class="btn-wizard-avance">Siguiente</button>
+          <button type="button" id="btn-wizard-guardar" class="btn-wizard-avance ocultar-btn">Registrar Tesis</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <!-- Footer compartido -->
+  </footer>
+
+  <script src="assets/scripts/global.js"></script>
+  <script src="assets/scripts/dashboard-estudiante.js"></script>
+</body>
+</html>
