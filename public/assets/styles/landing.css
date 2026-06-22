@@ -536,74 +536,79 @@ html {
     font-weight: 600;
 }
 
-/* ─── FOOTER ─────────────────────────────────────────────────────────── */
-.site-footer {
-    background-color: var(--negro);
-    color: #ffffff;
-    font-family: var(--fuente);
-}
 
-.footer-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 48px 117px;
-    box-sizing: border-box;
-}
+@media (max-width: 768px) {
+    
+    /* 1. Ajustes Generales de Márgenes */
+    .nav, 
+    .hero-section, 
+    .stats-section, 
+    .features-section, 
+    .how-section, 
+    .pricing-section, 
+    .cta-section {
+        padding-left: 24px;   /* Reducimos los 117px a solo 24px para que no coma pantalla */
+        padding-right: 24px;
+    }
 
-.footer-heading {
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    color: #ffffff;
-    margin-bottom: 16px;
-}
+    /* 2. Menú de Navegación */
+    .nav-rigth {
+        display: none;        /* Por ahora ocultamos el menú largo en celulares para que no se rompa */
+    }
 
-.footer-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 14px;
-    color: #B9B9B9;
-    margin-bottom: 10px;
-}
+    /* 3. Hero (Pasar de 2 columnas a 1 columna vertical) */
+    .hero-section {
+        flex-direction: column-reverse; /* Pone la imagen arriba y los textos abajo */
+        text-align: center;
+        gap: 32px;
+    }
 
-.footer-item svg {
-    flex-shrink: 0;
-    color: var(--violeta);
-}
+    .hero-content h1 {
+        font-size: 32px;      /* Achicamos el título para que entre completo */
+    }
 
-.footer-socials {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
+    .hero-buttons {
+        flex-direction: column; /* Botones uno abajo del otro */
+        width: 100%;
+    }
 
-.social-link {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 14px;
-    color: #B9B9B9;
-    text-decoration: none;
-    transition: color 0.2s;
-}
+    .hero-features {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
 
-.social-link:hover {
-    color: #ffffff;
-}
+    /* 4. Estadísticas (Uno debajo de otro) */
+    .stats-section {
+        flex-direction: column;
+        gap: 32px;
+    }
 
-.social-link svg {
-    flex-shrink: 0;
-}
+    /* 5. Características (El Grid pasa de 3 columnas a solo 1 columna) */
+    .features-grid, 
+    .how-grid {
+        grid-template-columns: 1fr; /* Una sola columna vertical */
+        gap: 20px;
+    }
 
-.footer-bottom {
-    border-top: 1px solid #2D2D2D;
-    text-align: center;
-    padding: 20px 117px;
-    font-size: 13px;
-    color: #666666;
+    /* 6. Planes de Precios */
+    .pricing-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* 7. Caja Morada (CTA) */
+    .cta-box h2 {
+        font-size: 24px;      /* Título más pequeño para pantallas chicas */
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .btn-cta, .btn-cta-secondary {
+        width: 100%;          /* Los botones ocupan todo el ancho disponible */
+        text-align: center;
+    }
 }
